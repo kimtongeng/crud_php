@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,22 +19,28 @@
       </div>
       <div class="main-menu">
         <div class="menu">
-          <a href="../index.html">Dashboard</a>
-        </div>
-        <div class="menu">
-          <a href="./borrow/index.html">Borrow</a>
+          <a href="../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./about_me.html">About me</a>
+          <a href="./borrow.php">Borrow</a>
+        </div>
+        <div class="menu">
+          <a href="./about_me.php">About me</a>
         </div>
 
       </div>
     </div>
     <div class="body">
-      <div class="header">
+      <div class="header space-between">
+        <a href="./index.php">
+          <div class="back">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+        </a>
         <button id="menu" class="menu">
           <i class="fa-solid fa-bars-staggered"></i>
         </button>
+
         <div class="clock">
           <i class="fa-regular fa-clock"></i>
           <div id="clock">--:--:--</div>
@@ -42,9 +48,25 @@
       </div>
       <div class="main-body">
 
-        <h1>
-          Welcome To Book borrow
-        </h1>
+
+        <div class="header-form">
+          <div class="title">
+            Delete Borrow
+          </div>
+        </div>
+
+        <div class="body-form">
+          <div class="delete-container">
+            <h2>Delete Borrow</h2>
+            <p class="warning-text">Are you sure you want to delete this borrow record?</p>
+            <div class="btn-group">
+              <a href="./index.php" class="cancel-btn" >Cancel</a>
+              <button class="confirm-delete-btn" onclick="handleDelete()">Delete</button>
+            </div>
+          </div>
+
+
+        </div>
 
       </div>
     </div>
@@ -52,5 +74,4 @@
 </body>
 
 </html>
-
-<script src="../js/script.js"></script>
+<script src="../../js/script.js"></script>

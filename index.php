@@ -19,13 +19,13 @@
       </div>
       <div class="main-menu">
         <div class="menu active">
-          <a href="index.html">Dashboard</a>
+          <a href="index.php">Dashboard</a>
         </div>
         <div class="menu ">
-          <a href="./page/borrow/index.html">Borrow</a>
+          <a href="./page/borrow/index.php">Borrow</a>
         </div>
         <div class="menu">
-          <a href="./page/about_me.html">About me</a>
+          <a href="./page/about_me.php">About me</a>
         </div>
 
       </div>

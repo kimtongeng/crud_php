@@ -19,13 +19,13 @@
       </div>
       <div class="main-menu">
         <div class="menu">
-          <a href="../../index.html">Dashboard</a>
+          <a href="../../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./index.html">Borrow</a>
+          <a href="./index.php">Borrow</a>
         </div>
         <div class="menu">
-          <a href="../about_me.html">About me</a>
+          <a href="../about_me.php">About me</a>
         </div>
 
       </div>
@@ -49,7 +49,7 @@
             Borrow
           </div>
           <div class="add-button">
-            <a href="./add.html">
+            <a href="./add.php">
               <i class="fa-solid fa-plus"></i>
               <span>Add</span>
             </a>
@@ -79,8 +79,8 @@
                     <td>Returned</td>
                     <td>
                       <div class="action">
-                        <a href="./edit.html" class="edit-btn">Edit</a>
-                        <a href="./delete.html" class="delete-btn">Delete</a>
+                        <a href="./edit.php" class="edit-btn">Edit</a>
+                        <a href="./delete.php" class="delete-btn">Delete</a>
                       </div>
 
                     </td>
@@ -93,8 +93,8 @@
                     <td>Pending</td>
                     <td>
                       <div class="action">
-                        <a href="./edit.html" class="edit-btn">Edit</a>
-                        <a href="./delete.html" class="delete-btn">Delete</a>
+                        <a href="./edit.php" class="edit-btn">Edit</a>
+                        <a href="./delete.php" class="delete-btn">Delete</a>
                       </div>
 
                     </td>

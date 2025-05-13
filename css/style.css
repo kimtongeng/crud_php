@@ -345,6 +345,7 @@
 
 .cancel-btn,
 .confirm-delete-btn {
+  text-decoration: none;
   padding: 12px 24px;
   border: 2px solid black;
   font-size: 16px;
@@ -354,6 +355,7 @@
 }
 
 .cancel-btn {
+  text-decoration: none;
   background-color: white;
   color: black;
 }

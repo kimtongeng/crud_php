@@ -19,13 +19,13 @@
       </div>
       <div class="main-menu">
         <div class="menu">
-          <a href="../index.html">Dashboard</a>
+          <a href="../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./borrow.html">Borrow</a>
+          <a href="./borrow.php">Borrow</a>
         </div>
         <div class="menu">
-          <a href="./about_me.html">About me</a>
+          <a href="./about_me.php">About me</a>
         </div>
 
       </div>
@@ -34,7 +34,7 @@
       <div class="header">
 
 
-        <a href="./index.html">
+        <a href="./index.php">
           <div class="back">
             <i class="fa-solid fa-arrow-left"></i>
           </div>
