@@ -1,3 +1,6 @@
+<?php
+include "../../connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,11 +35,11 @@
     </div>
     <div class="body">
       <div class="header">
-        
-          <button id="menu" class="menu">
-            <i class="fa-solid fa-bars-staggered"></i>
-          </button>
-        
+
+        <button id="menu" class="menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+
         <div class="clock">
           <i class="fa-regular fa-clock"></i>
           <div id="clock">--:--:--</div>
@@ -63,42 +66,51 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Item</th>
-                    <th>Borrower</th>
-                    <th>Date</th>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Book Name</th>
+                    <th>Book ID</th>
+                    <th>Borrow Date</th>
+                    <th>Return Date</th>
+                    <th>Quantity</th>
                     <th>Status</th>
+                    <th>Notes</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Laptop</td>
-                    <td>John Doe</td>
-                    <td>2025-05-12</td>
-                    <td>Returned</td>
-                    <td>
-                      <div class="action">
-                        <a href="./edit.php" class="edit-btn">Edit</a>
-                        <a href="./delete.php" class="delete-btn">Delete</a>
-                      </div>
 
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Projector</td>
-                    <td>Jane Smith</td>
-                    <td>2025-05-10</td>
-                    <td>Pending</td>
-                    <td>
-                      <div class="action">
-                        <a href="./edit.php" class="edit-btn">Edit</a>
-                        <a href="./delete.php" class="delete-btn">Delete</a>
-                      </div>
+                  <?php
+                  $data = exc_query("SELECT * FROM borrow_book");
+                  $i = 1;
 
-                    </td>
-                  </tr>
+                  foreach ($data as $row) {
+                    echo "<tr>";
+                    echo "<td>" . $i++ . "</td>";
+                    echo "<td>" . htmlspecialchars($row['student_name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['student_id']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['phone']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['book_name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['book_id']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['borrow_date']->format('Y-m-d')) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['return_date']->format('Y-m-d')) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['quantity']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['status']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['notes']) . "</td>";
+                    echo "<td>
+            <div class='action'>
+              <a href='./edit.php?id=" . $row['id'] . "' class='edit-btn'>Edit</a>
+              <a href='./delete.php?id=" . $row['id'] . "' class='delete-btn'>Delete</a>
+            </div>
+          </td>";
+                    echo "</tr>";
+                  }
+                  ?>
+
+
                 </tbody>
               </table>
             </div>

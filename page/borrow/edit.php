@@ -1,3 +1,39 @@
+<?php
+include "../../connect.php";
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $id = $_POST['id'];
+  $data = [
+    'student_name' => $_POST['student_name'],
+    'student_id' => $_POST['student_id'],
+    'email' => $_POST['email'],
+    'phone' => $_POST['phone'],
+    'book_name' => $_POST['book_name'],
+    'book_id' => $_POST['book_id'],
+    'borrow_date' => $_POST['borrow_date'],
+    'return_date' => $_POST['return_date'],
+    'quantity' => $_POST['quantity'],
+    'status' => $_POST['status'],
+    'notes' => $_POST['notes']
+  ];
+
+  if (updateBorrowForm($id, $data)) {
+    header("Location: index.php");
+    exit();
+  } else {
+    echo "<script>alert('❌ Failed to update record'); window.location.href='index.php';</script>";
+  }
+}
+if (!isset($_GET['id'])) {
+  header("Location: index.php");
+  exit();
+}
+$id = $_GET["id"];
+$borrow = getBorrowById($id);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,66 +93,68 @@
         <div class="body-form">
           <div class="form-container">
 
-            <form class="borrow-form">
+            <form class="borrow-form" method="POST" action="edit.php">
+              <input type="hidden" name="id" value="<?= $id ?>">
+
               <div class="form-row">
                 <div class="form-group">
                   <label for="student_name">Student Name</label>
-                  <input type="text" id="student_name" name="student_name" required>
+                  <input type="text" id="student_name" name="student_name" required value="<?= $borrow['student_name'] ?>">
                 </div>
 
                 <div class="form-group">
                   <label for="student_id">Student ID</label>
-                  <input type="text" id="student_id" name="student_id" required>
+                  <input type="text" id="student_id" name="student_id" required value="<?= $borrow['student_id'] ?>">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" id="email" name="email">
+                  <input type="email" id="email" name="email" value="<?= $borrow['email'] ?>">
                 </div>
 
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone">
+                  <input type="tel" id="phone" name="phone" value="<?= $borrow['phone'] ?>">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
                   <label for="book_name">Book Name</label>
-                  <input type="text" id="book_name" name="book_name" required>
+                  <input type="text" id="book_name" name="book_name" required value="<?= $borrow['book_name'] ?>">
                 </div>
 
                 <div class="form-group">
                   <label for="book_id">Book ID</label>
-                  <input type="text" id="book_id" name="book_id" required>
+                  <input type="text" id="book_id" name="book_id" required value="<?= $borrow['book_id'] ?>">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
                   <label for="borrow_date">Borrow Date</label>
-                  <input type="date" id="borrow_date" name="borrow_date" required>
+                  <input type="date" id="borrow_date" name="borrow_date" required value="<?= $borrow['borrow_date']->format('Y-m-d') ?>">
                 </div>
 
                 <div class="form-group">
                   <label for="return_date">Return Date</label>
-                  <input type="date" id="return_date" name="return_date" required>
+                  <input type="date" id="return_date" name="return_date" required value="<?= $borrow['return_date']->format('Y-m-d') ?>">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
                   <label for="quantity">Quantity</label>
-                  <input type="number" id="quantity" name="quantity" min="1" required>
+                  <input type="number" id="quantity" name="quantity" min="1" required value="<?= $borrow['quantity'] ?>">
                 </div>
 
                 <div class="form-group">
                   <label for="status">Status</label>
                   <select id="status" name="status" required>
-                    <option value="borrowed">Borrowed</option>
-                    <option value="returned">Returned</option>
+                    <option value="borrowed" <?= $borrow['status'] == 'borrowed' ? 'selected' : '' ?>>Borrowed</option>
+                    <option value="returned" <?= $borrow['status'] == 'returned' ? 'selected' : '' ?>>Returned</option>
                   </select>
                 </div>
               </div>
@@ -124,11 +162,11 @@
               <div class="form-row">
                 <div class="form-group full-width">
                   <label for="notes">Notes</label>
-                  <textarea id="notes" name="notes" rows="3"></textarea>
+                  <textarea id="notes" name="notes" rows="3"><?= $borrow['notes'] ?></textarea>
                 </div>
               </div>
 
-              <button type="submit">Submit</button>
+              <button type="submit">Update</button>
             </form>
           </div>
 

@@ -1,3 +1,26 @@
+<?php
+include "../../connect.php";
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+  $id = $_POST['id'];
+  $isDeleted = deleteRecord($id);
+  if ($isDeleted) {
+    header("Location: index.php");
+    exit();
+  } else {
+    $isError = true;
+    
+  }
+}
+if (!isset($_GET['id'])) {
+  header("Location: index.php");
+  exit();
+}
+
+$id = $_GET["id"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,11 +83,13 @@
             <h2>Delete Borrow</h2>
             <p class="warning-text">Are you sure you want to delete this borrow record?</p>
             <div class="btn-group">
-              <a href="./index.php" class="cancel-btn" >Cancel</a>
-              <button class="confirm-delete-btn" onclick="handleDelete()">Delete</button>
+              <a href="index.php" class="cancel-btn">Cancel</a>
+              <form method="POST" action="delete.php" style="display: inline;">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+                <button type="submit" class="confirm-delete-btn">Delete</button>
+              </form>
             </div>
           </div>
-
 
         </div>
 
@@ -75,3 +100,8 @@
 
 </html>
 <script src="../../js/script.js"></script>
+<?php 
+if(isset($isError)){
+  echo "<script>alert('❌ Failed to delete the record.'); window.location.href = 'index.php';</script>";
+}
+?>

@@ -1,3 +1,18 @@
+
+<?php
+include "../../connect.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $result = insert_borrow_form($_POST);
+
+  if ($result) {
+    header("Location: index.php");
+    exit();
+  } else {
+    $isError = true;
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +28,10 @@
 
 <body>
   <div class="main">
+    <div id="alert-box" class="alert alert-danger">
+      <span class="alert-message">❌ Failed to save the borrow record.</span>
+      <button class="close-btn" onclick="closeAlert()">×</button>
+    </div>
     <div class="side-bar" id="side-bar">
       <div class="top-menu">
         <i class="fa-solid fa-angle-left" id="close-menu"></i>
@@ -60,7 +79,7 @@
         <div class="body-form">
           <div class="form-container">
 
-            <form class="borrow-form">
+            <form class="borrow-form" method="POST" action="add.php">
               <div class="form-row">
                 <div class="form-group">
                   <label for="student_name">Student Name</label>
@@ -144,3 +163,8 @@
 
 </html>
 <script src="../../js/script.js"></script>
+<?php
+if(isset($isError)){
+  echo "<script>showAlert('❌ Failed to save the borrow record.');</script>";
+}
+?>
