@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <a href="../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./borrow.php">Borrow</a>
+          <a href="./borrow.php">Borrow book</a>
         </div>
         <div class="menu">
           <a href="./about_me.php">About me</a>
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="header-form">
           <div class="title">
-            Add New Borrow
+            Add Borrow book
           </div>
         </div>
 

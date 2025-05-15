@@ -42,9 +42,14 @@
       </div>
       <div class="main-body">
 
-        <h1>
-          Welcome To Book borrow
-        </h1>
+        <section class="content">
+          <h1>About Me</h1>
+          <div class="card">
+            <p><strong>Name:</strong> Yeang Hongmeng</p>
+            <p><strong>Class:</strong> I am currently learning in class as a student.</p>
+            <p><strong>Project:</strong> This system is designed to help manage book borrowing by allowing users to insert and track borrow information efficiently.</p>
+          </div>
+        </section>
 
       </div>
     </div>

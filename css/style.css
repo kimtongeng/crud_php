@@ -394,6 +394,9 @@
   #close-menu {
     display: block;
   }
+  .body{
+    width: 100% ;
+  }
   .side-bar {
     display: none;
     position: absolute;
@@ -458,4 +461,22 @@
 
 .alert.show {
   display: block;
+}
+
+.content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.content h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.card p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 16px;
 }

@@ -58,7 +58,7 @@ $borrow = getBorrowById($id);
           <a href="../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./borrow.php">Borrow</a>
+          <a href="./borrow.php">Borrow book</a>
         </div>
         <div class="menu">
           <a href="./about_me.php">About me</a>
@@ -86,7 +86,7 @@ $borrow = getBorrowById($id);
 
         <div class="header-form">
           <div class="title">
-            Edit Borrow
+            Edit Borrow book
           </div>
         </div>
 

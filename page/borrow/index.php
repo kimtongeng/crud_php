@@ -25,7 +25,7 @@ include "../../connect.php";
           <a href="../../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./index.php">Borrow</a>
+          <a href="./index.php">Borrow book</a>
         </div>
         <div class="menu">
           <a href="../about_me.php">About me</a>
@@ -49,7 +49,7 @@ include "../../connect.php";
 
         <div class="header-form">
           <div class="title">
-            Borrow
+            Borrow book list
           </div>
           <div class="add-button">
             <a href="./add.php">
