@@ -24,7 +24,7 @@
           <a href="index.php">Dashboard</a>
         </div>
         <div class="menu ">
-          <a href="./page/borrow/index.php">Borrow</a>
+          <a href="./page/borrow/index.php">Borrow book</a>
         </div>
         <div class="menu">
           <a href="./page/about_me.php">About me</a>

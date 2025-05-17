@@ -55,13 +55,13 @@ $borrow = getBorrowById($id);
       </div>
       <div class="main-menu">
         <div class="menu">
-          <a href="../index.php">Dashboard</a>
+          <a href="../../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./borrow.php">Borrow book</a>
+          <a href="./index.php">Borrow book</a>
         </div>
         <div class="menu">
-          <a href="./about_me.php">About me</a>
+          <a href="../about_me.php">About me</a>
         </div>
 
       </div>
@@ -135,12 +135,12 @@ $borrow = getBorrowById($id);
               <div class="form-row">
                 <div class="form-group">
                   <label for="borrow_date">Borrow Date</label>
-                  <input type="date" id="borrow_date" name="borrow_date" required value="<?= $borrow['borrow_date']->format('Y-m-d') ?>">
+                  <input type="date" id="borrow_date" name="borrow_date" required value="<?= $borrow['borrow_date'] ?>">
                 </div>
 
                 <div class="form-group">
                   <label for="return_date">Return Date</label>
-                  <input type="date" id="return_date" name="return_date" required value="<?= $borrow['return_date']->format('Y-m-d') ?>">
+                  <input type="date" id="return_date" name="return_date" required value="<?= $borrow['return_date'] ?>">
                 </div>
               </div>
 

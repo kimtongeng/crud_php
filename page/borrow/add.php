@@ -38,13 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="main-menu">
         <div class="menu">
-          <a href="../index.php">Dashboard</a>
+          <a href="../../index.php">Dashboard</a>
         </div>
         <div class="menu active">
-          <a href="./borrow.php">Borrow book</a>
+          <a href="./index.php">Borrow book</a>
         </div>
         <div class="menu">
-          <a href="./about_me.php">About me</a>
+          <a href="../about_me.php">About me</a>
         </div>
 
       </div>
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-group">
                   <label for="status">Status</label>
                   <select id="status" name="status" required>
-                    <option value="borrowed">Borrowed</option>
+                    <option value="borrowed" selected>Borrowed</option>
                     <option value="returned">Returned</option>
                   </select>
                 </div>
